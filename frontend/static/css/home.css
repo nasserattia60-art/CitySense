@@ -1,0 +1,156 @@
+/* start global code css */
+
+:root{
+  --primry-color:#50C878 ;
+  --primry-color-tow:#0B0A0A;
+  --primry-color-three:#ADD8E6;
+  
+  --bg-color:floralwhite;
+  --bg-color-tow:;
+  --bg-color-three:; 
+  
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:border-box ;
+}
+
+
+@font-face {
+  font-family: 'Inter';
+  src: url("Inter.ttf") format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+
+
+body{
+  font-family: 'Inter' ,Arial, Helvetica, sans-serif;
+  background:var(--bg-color) ;
+  color:var(--primry-color-tow) ;
+  
+  width: 100% ;
+  height: 100vh;
+}
+/* end global code css */
+
+/* start header */
+header{
+  position: relative;
+  margin: 10px 5px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: calc(100% - 10px);
+  height: 75px;
+  
+}
+header::before{
+  content:"";
+  position: absolute;
+  bottom: 0;
+  left:5px;
+  width: calc(100% - 10px);
+  height: 1px;
+  background-color: var(--primry-color-three);
+}
+
+header h1{
+  
+  align-self: flex-start;
+  font-size: 2em;
+  color:var(--primry-color) ;
+}
+header nav{
+  flex: 1;
+  
+}
+header nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  
+}
+header nav ul li a{
+  color: var(--primry-color-tow);
+  
+}
+
+header nav ul li a:hover,
+header nav ul li a:active{
+  color: var(--primry-color);
+}
+
+/* end header */
+
+
+/* start main */
+main{
+  padding-top: 30px;
+  width: 100%;
+  
+}
+main h2{
+  text-align: center;
+  font-size: 24px ;
+  margin-bottom: 17px;
+}
+main p{
+  text-align: center;
+  font-size: 16px;
+  color: var(--primry-color-tow) / 70%;
+  padding: 0 12.5px;
+  width: calc(100% - 25px);
+  margin: 0 auto;
+}
+
+
+
+/* end main */
+
+/* start form*/
+
+form{
+  
+  width: calc(100% - 30px);
+  position: relative;
+  border: 1px solid var(--primry-color-tow);
+  margin: 30px auto;
+  height: 58px;
+  border-radius: 15px;
+}
+form input{
+  outline: none;
+  border: none;
+  height: 56px;
+  width: 100%;
+  border-radius: 15px;
+  padding-left: 7px;
+  font-size: 24px;
+  font-weight: normal;
+}
+form button{
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+}
+/* end form*/
+
+

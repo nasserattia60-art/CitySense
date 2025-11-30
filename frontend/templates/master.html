@@ -1,0 +1,33 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+     <link rel="stylesheet" href="{% static 'fontawesome-fre/css/all.css' %}"/>
+        
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block files %}
+ 
+    {% endblock %}
+    <title></title>
+  
+  </head>
+  <body>
+    <header>
+      <h1>CitySense</h1> 
+      <nav>
+        <ul>
+          <li><a href="#">home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Heatmaps</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    {% block conteent %}
+    
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{% extends 'master.html' %}
+{% load static %}
+  {% block files %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}"/>
+
+    <script src="{% static 'js/home.js' %}"></script>
+    {% endblock %}
+
+
+
+ {% block conteent %}
+    <main>
+      <h2> CTA </h2> 
+      <p> text level tow </p> 
+      
+      <form action="" method="get" accept-charset="utf-8">
+        <input type="text" name="search" id="search" />
+        <button type="submit"> <i class="fa-solid fa-search fa-2x ">
+        </i></button> 
+      
+      </form>
+    </main>
+    
+{% endblock %}
