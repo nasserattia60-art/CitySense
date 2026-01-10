@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}CitySense{% endblock %}</title>
+<link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.svg' %}">
+<link rel="stylesheet" href="{% static 'css/base/all.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/base/base.css' %}">
+
+
+{% block extra_css %}{% endblock %}
+</head>
+<body>
+
+
+    {% include 'base/header.html' %}
+
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+<div id="auth-modal" class="auth-modal hidden">
+ <div class="auth-box">
+     <h3>Login Required</h3>
+     <p>You need an account to access this feature.</p>
+
+     <div class="actions">
+         <a href=" {% url 'users:login' %} " class="btn primary">Login</a>
+         <a href="{% url 'users:register' %}" class="btn secondary">Create Account</a>
+     </div>
+
+     <button class="close-btn">&times;</button>
+ </div>
+</div>
+
+  {% include 'base/footer.html' %}
+
+
+{% block extra_js %}{% endblock %}
+
+<script src="{% static 'js/base/base.js' %}"></script>
+
+</body>
+</html>
+

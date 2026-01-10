@@ -1,0 +1,331 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --text-color: #333;
+    --bg-color: #f5f5f5;
+    --header-height: 70px;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ---- Reset ---- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background: linear-gradient(135deg, #ece9e6, #ffffff);
+}
+
+/* ---- Header with Gradient Glass ---- */
+header {
+    width: 100%;
+    backdrop-filter: blur(15px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s;
+    height: 71px;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto !important;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/* ---- Logo ---- */
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* ---- Navigation ---- */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.nav-links li a:hover {
+    background-color: rgba(52, 152, 219, 0.2);
+    color: var(--primary-color);
+}
+
+/* ---- User Menu ---- */
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.user-menu span {
+    font-weight: 500;
+}
+
+.user-menu a,
+.user-menu button {
+    text-decoration: none;
+    color: var(--primary-color);
+    padding: 5px 12px;
+    border: 1px solid var(--primary-color);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.user-menu a:hover,
+.user-menu button:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* ---- Mobile Menu Toggle ---- */
+.mobile-menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* ---- Responsive & Slide Animation ---- */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: var(--header-height);
+        left: -100%;
+        width: 70%;
+        height: calc(100vh - var(--header-height));
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding-top: 30px;
+        transition: left 0.4s ease;
+        box-shadow: 4px 0 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.show {
+        left: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .user-menu {
+        flex-direction: column;
+        margin-left: 0;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+}
+
+
+
+/* ---- Footer ---- */
+footer {
+    width: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
+    padding: 50px 20px 30px 20px;
+    color: var(--text-color);
+    transition: all 0.3s;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-grid div {
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer-grid h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.footer-grid p,
+.footer-grid li a {
+    color: var(--text-color);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-grid ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-grid ul li {
+    margin-bottom: 10px;
+}
+
+.footer-grid ul li a {
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-grid ul li a:hover {
+    color: var(--secondary-color);
+    transform: translateX(5px);
+}
+
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    color: var(--primary-color);
+    font-size: 18px;
+    text-decoration: none;
+    transition: transform 0.3s, background 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px) rotate(10deg);
+    background: var(--primary-color);
+    color: #fff;
+}
+
+/* ---- Footer Bottom Text ---- */
+footer p.bottom-text {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 13px;
+    color: var(--text-color);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .footer-grid {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-grid div {
+        width: 100%;
+    }
+
+    .social-icons {
+        justify-content: flex-start;
+    }
+
+    footer p.bottom-text {
+        text-align: center;
+    }
+}
+
+.auth-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.auth-modal.hidden {
+    display: none;
+}
+
+.auth-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+.auth-box .actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.auth-box .btn {
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+}
+
+.btn.primary {
+    background: #3498db;
+    color: white;
+}
+
+.btn.secondary {
+    background: #ecf0f1;
+    color: #333;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    cursor: pointer;
+}

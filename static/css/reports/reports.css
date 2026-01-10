@@ -1,0 +1,150 @@
+/* =========================
+   Global Variables
+========================= */
+:root {
+    --primary-color: #4f9cff;
+    --secondary-color: #2ecc71;
+    --text-color: #1f2933;
+    --muted-text: #6b7280;
+
+    --glass-bg: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.35);
+    --glass-blur: blur(16px);
+
+    --radius-lg: 18px;
+    --radius-md: 12px;
+
+    --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.12);
+    --shadow-hover: 0 14px 40px rgba(79, 156, 255, 0.35);
+}
+
+/* =========================
+   Container
+========================= */
+.reports-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* =========================
+   Section Title
+========================= */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+/* =========================
+   Reports Grid
+========================= */
+.report-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+/* =========================
+   Report Card (Glass)
+========================= */
+.report-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+
+    border-radius: var(--radius-lg);
+    padding: 22px;
+
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.report-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* =========================
+   Card Header
+========================= */
+.report-header {
+    margin-bottom: 12px;
+}
+
+.report-address {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    line-height: 1.4;
+}
+
+/* =========================
+   Card Body
+========================= */
+.report-body {
+    margin-bottom: 18px;
+}
+
+.report-score {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 6px;
+}
+
+.report-weather {
+    font-size: 0.95rem;
+    color: var(--muted-text);
+}
+
+.separator {
+    margin: 0 6px;
+    opacity: 0.6;
+}
+
+/* =========================
+   Card Footer
+========================= */
+.report-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.view-report-btn {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.view-report-btn:hover {
+    color: var(--primary-color);
+    transform: translateX(6px);
+}
+
+/* =========================
+   Empty State
+========================= */
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--muted-text);
+    font-size: 1.1rem;
+    padding: 40px 0;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 600px) {
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .report-card {
+        padding: 18px;
+    }
+}

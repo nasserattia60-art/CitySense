@@ -1,0 +1,56 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}CitySense | My Reports{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href=" {% static 'css/reports/reports.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container reports-container">
+
+    <h2 class="section-title">My Reports</h2>
+
+    <div class="report-list">
+        {% for report in reports %}
+            <div class="report-card">
+
+                <div class="report-header">
+                    <h4 class="report-address">
+                        {{ report.location.address }}
+                    </h4>
+                </div>
+
+                <div class="report-body">
+                    <p class="report-score">
+                        <strong>AI Score:</strong> {{ report.ai_score }}
+                    </p>
+
+                    {% if report.temperature %}
+                        <p class="report-weather">
+                            🌡 {{ report.temperature }} °C
+                            <span class="separator">|</span>
+                            💨 {{ report.windspeed }} km/h
+                        </p>
+                    {% endif %}
+                </div>
+
+                <div class="report-footer">
+                    <a class="view-report-btn"
+                       href="/analyze/report/{{ report.id }}/">
+                        View Report →
+                    </a>
+                </div>
+
+            </div>
+        {% empty %}
+            <p class="empty-state">
+                No reports available yet.
+            </p>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}
+{% block extra_js %}
+
+{% endblock %}

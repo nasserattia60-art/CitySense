@@ -1,0 +1,121 @@
+/* ===== Auth Page ===== */
+.auth-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* ===== Wrapper ===== */
+.auth-wrapper {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ===== Card ===== */
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 35px 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Glass Effect ===== */
+.glass {
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* ===== Header ===== */
+.auth-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.auth-header h1 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.auth-header p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+}
+
+/* ===== Form ===== */
+.auth-form p {
+    margin-bottom: 15px;
+}
+
+.auth-form label {
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.auth-form input {
+    width: calc(100% - 28px);
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin-top: 6px;
+    font-size: 0.95rem;
+}
+
+#id_password2_helptext,#id_username_helptext{
+    display: none;
+}
+
+
+
+
+/* ===== Button ===== */
+.btn {
+    width: 100%;
+    padding: 13px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, #4f9cff, #2ecc71);
+    color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Footer ===== */
+.auth-footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.auth-footer p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+}
+
+.auth-footer a {
+    color: #2ecc71;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}

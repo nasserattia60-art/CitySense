@@ -1,0 +1,77 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}CitySense | profile {% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href=" {% static 'css/users/profile.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2 class="logo">CitySense</h2>
+        <ul class="menu">
+            <li class="active">Profile</li>
+            <li><a href="{% url 'reports:reports' %}" style='text-decoration: none;color: #fff;'>Reports</a></li>
+            <li>setting</li>
+            <li>
+              <form method="post" action="{% url 'users:logout' %}">
+                {% csrf_token %}
+                <button type="submit" style='background-color: #111827;border: none;color: #fff;' class='bt_fo'>Logout</button>
+              </form>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+
+        <!-- Profile Header -->
+        <section class="profile-header">
+            <div class="avatar">
+                <img src="{% static '{{ profile.avatar.url }}' %}" >
+            </div>
+            <div class="info">
+                <h1>{{ context.user.username }}</h1>
+                {% if context.profile.bio %}
+                 <p><strong>Bio:</strong> {{ context.profile.bio }}</p>
+                {% endif %}
+                <span class="badge">Premium User</span>
+            </div>
+        </section>
+
+        <!-- Profile Details -->
+        <section class="profile-details">
+            <div class="card">
+                <h3>Email</h3>
+                <p>{{ context.user.email }}</p>
+            </div>
+
+            <div class="card">
+                <h3>Location</h3>
+                <p>{{ context.profile.city }}</p>
+            </div>
+
+            <div class="card">
+                <h3>Member Since</h3>
+                <p>Jan 2024</p>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="about">
+            <h2>About Me</h2>
+            <p>
+                Passionate software engineer with a focus on AI, web development,
+                and building scalable systems that actually work in real life.
+            </p>
+        </section>
+
+    </main>
+
+</div>
+
+{% endblock %}
+{% block extra_js %}
+{% endblock %}

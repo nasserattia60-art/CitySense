@@ -1,0 +1,31 @@
+<footer>
+    <div class="container footer-container">
+        <div class="footer-grid">
+            <div>
+                <h3>CitySense</h3>
+                <p>AI-powered insights on urban living for better decision-making.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+
+                </div>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{% url 'core:home' %}">Home</a></li>
+                    <li><a href="{% url 'dashboard:dashboard' %}" class="auth-required">Dashboard</a></li>
+                    <li><a href="{% url 'analysis:analyze' %}" class="auth-required">Analysis</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p>Email: nasserattia60@gmail.com</p>
+                <p>Phone: +20 0111 0404 431</p>
+            </div>
+        </div>
+        <p class="bottom-text">© 2026 CitySense. All rights reserved.</p>
+    </div>
+</footer>

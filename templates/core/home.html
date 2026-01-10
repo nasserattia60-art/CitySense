@@ -1,0 +1,122 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}CitySense | Explore Cities{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href=" {% static 'css/core/home.css' %}">
+{% endblock %}
+{% block content %}
+
+
+<section class="hero" aria-labelledby="hero-title">
+    <span class="importint_not">
+        Please register to start using CitySense
+    </span>
+
+    <div class="container">
+        <h1 id="hero-title">Welcome to CitySense</h1>
+        <p>
+            Your AI-powered guide to explore cities, understand real-life conditions,
+            and make informed decisions.
+        </p>
+
+        <a href="{% url 'analysis:analyze' %}" class="auth-required btn-primary"> Start Exploring</a>
+      
+    </div>
+</section>
+
+<!-- Table of Contents -->
+<nav class="toc-nav" aria-label="Page navigation">
+    <ul>
+        <li><a href="#inspiration">Inspiration</a></li>
+        <li><a href="#what-it-does">What it does</a></li>
+        <li><a href="#how-we-built">How we built it</a></li>
+        <li><a href="#challenges">Challenges</a></li>
+        <li><a href="#accomplishments">Accomplishments</a></li>
+        <li><a href="#lessons">Lessons Learned</a></li>
+        <li><a href="#whats-next">What’s Next</a></li>
+    </ul>
+</nav>
+
+<main class="container" id="al_ab">
+
+    <section id="inspiration" class="info-card" aria-labelledby="inspiration-title">
+        <h2 id="inspiration-title">🌟 Inspiration</h2>
+        <p>
+            Many people consider moving to or visiting a new city based on attractive
+            images or incomplete information, only to face unexpected realities later.
+            <strong>CitySense</strong> exists to reveal the
+            <strong>real day-to-day conditions</strong> before decisions are made.
+        </p>
+    </section>
+
+    <section id="what-it-does" class="info-card" aria-labelledby="what-title">
+        <h2 id="what-title">⚙️ What it does</h2>
+        <ul>
+            <li>Explore cities before relocating or visiting</li>
+            <li>Understand real-life advantages, disadvantages, and recurring issues</li>
+            <li>Access practical data: cost of living, safety, services</li>
+            <li>Build a realistic mental picture of any city</li>
+            <li>Reduce risks caused by assumptions or outdated information</li>
+        </ul>
+    </section>
+
+    <section id="how-we-built" class="info-card" aria-labelledby="build-title">
+        <h2 id="build-title">🛠️ How we built it</h2>
+        <ul>
+            <li><strong>Backend:</strong> Django</li>
+            <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+            <li><strong>UX Focus:</strong> clarity, comparison, usability</li>
+            <li><strong>Architecture:</strong> clean separation of concerns</li>
+            <li><strong>Scalability:</strong> built for growth</li>
+        </ul>
+    </section>
+
+    <section id="challenges" class="info-card" aria-labelledby="challenges-title">
+        <h2 id="challenges-title">🚧 Challenges</h2>
+        <ul>
+            <li>Presenting city problems objectively</li>
+            <li>Organizing large datasets clearly</li>
+            <li>Designing for users with diverse backgrounds</li>
+            <li>Delivering insights quickly without overload</li>
+            <li>Keeping flexibility as the platform grows</li>
+        </ul>
+    </section>
+
+    <section id="accomplishments" class="info-card" aria-labelledby="accomplishments-title">
+        <h2 id="accomplishments-title">🏆 Accomplishments</h2>
+        <ul>
+            <li>A platform built around real needs</li>
+            <li>Balanced, realistic city insights</li>
+            <li>UX that supports meaningful decisions</li>
+            <li>Strong technical foundation</li>
+            <li>Idea transformed into a working product</li>
+        </ul>
+    </section>
+
+    <section id="lessons" class="info-card" aria-labelledby="lessons-title">
+        <h2 id="lessons-title">📚 Lessons Learned</h2>
+        <ul>
+            <li>Transparency is essential for trust</li>
+            <li>UX directly influences life decisions</li>
+            <li>Architecture matters before features</li>
+            <li>Simplifying data is an art</li>
+            <li>User perspective beats assumptions</li>
+        </ul>
+    </section>
+
+    <section id="whats-next" class="info-card" aria-labelledby="next-title">
+        <h2 id="next-title">🚀 What’s Next</h2>
+        <ul>
+            <li>Real-time verified data integration</li>
+            <li>City-based community reporting</li>
+            <li>Location-aware alerts</li>
+            <li>Stronger data validation pipelines</li>
+        </ul>
+    </section>
+
+</main>
+
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}

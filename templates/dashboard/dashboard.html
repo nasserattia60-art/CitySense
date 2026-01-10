@@ -1,0 +1,43 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}CitySense | Explore Cities{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/dashboard/dashboard.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="container dashboard-container">
+
+    <!-- Dashboard Heading -->
+    <h2 class="dashboard-title">Dashboard</h2>
+
+    <!-- Stats Cards -->
+    <div class="stats">
+        <div class="card stat-card">Total Reports: {{ reports_count }}</div>
+        <div class="card stat-card">Average AI Score: {{ avg_ai_score }}</div>
+    </div>
+
+    <!-- Latest Reports Section -->
+    <h3 class="section-title">Latest Reports</h3>
+    <div class="report-list">
+        {% for report in latest_reports %}
+            <div class="report-card">
+                <h4>{{ report.location.address }}</h4>
+                <p>AI Score: {{ report.ai_score }}</p>
+                {% if report.temperature %}
+                    <p>Temp: {{ report.temperature }} °C | Wind: {{ report.windspeed }} km/h</p>
+                {% endif %}
+                <a href="{% url 'analysis:report' report.id %}" class="view-report-btn">View Report</a>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Map Button -->
+    <a href="{% url 'dashboard:map' %}" class="map-btn">View Map</a>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+    
+{% endblock %}

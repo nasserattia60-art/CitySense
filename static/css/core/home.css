@@ -1,0 +1,196 @@
+/* =========================
+   Global Variables
+========================= */
+:root {
+    --primary-color: #4f9cff;
+    --secondary-color: #2ecc71;
+    --text-color: #1f2933;
+    --muted-text: #6b7280;
+
+    --bg-gradient: linear-gradient(135deg, #0f172a, #020617);
+
+    --glass-bg: rgba(255, 255, 255, 0.12);
+    --glass-border: rgba(255, 255, 255, 0.25);
+    --glass-blur: blur(18px);
+
+    --radius-lg: 20px;
+    --radius-md: 14px;
+
+    --shadow-soft: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================
+   Hero Section
+========================= */
+.hero {
+    background: var(--bg-gradient);
+    color: #fff;
+    padding: 100px 20px 90px;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(79, 156, 255, 0.25), transparent 60%);
+}
+
+.hero .container {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: #d1d5db;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.7;
+}
+
+.importint_not {
+    display: inline-block;
+    background: rgba(255, 193, 7, 0.15);
+    color: #facc15;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 14px 34px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(79, 156, 255, 0.45);
+}
+
+/* =========================
+   TOC Navigation
+========================= */
+.toc-nav {
+    position: sticky;
+    top: 71px;
+    z-index: 50;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: center;
+}
+
+.toc-nav ul {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    padding: 14px 20px;
+    margin: 0;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.toc-nav a {
+    color: #e5e7eb;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 999px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.toc-nav a:hover {
+    background: rgba(79, 156, 255, 0.18);
+    color: #fff;
+}
+
+/* =========================
+   Main Content Container
+========================= */
+#al_ab.container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+/* =========================
+   Info Cards (Glass)
+========================= */
+.info-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    margin-bottom: 30px;
+
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    scroll-margin-top: 100px;
+}
+
+.info-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 45px rgba(79, 156, 255, 0.35);
+}
+
+.info-card h2 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 14px;
+    font-weight: 700;
+}
+
+.info-card p {
+    color: var(--text-color);
+    line-height: 1.75;
+    font-size: 1rem;
+}
+
+.info-card ul {
+    padding-left: 20px;
+}
+
+.info-card li {
+    margin-bottom: 10px;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .info-card {
+        padding: 24px;
+    }
+}

@@ -1,0 +1,27 @@
+<header>
+    <div class="container header-container">
+        <a href="{% url 'core:home' %}" class="logo">CitySense</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{% url 'core:home' %}" >Home</a></li>
+                <li><a href="{% url 'dashboard:dashboard' %}" class="auth-required">Dashboard</a></li>
+                <li><a href="{% url 'analysis:analyze' %}" class="auth-required">Analysis</a></li>
+                <div class="user-menu">
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'users:profile' %}">Profile</a>
+                        <form method="post" action="{% url 'users:logout' %}">
+                            {% csrf_token %}
+                        <button type="submit">Logout</button>
+                        </form>
+    
+                    {% else %}
+                        <a href="{% url 'users:login' %}">Login</a>
+                        <a href="{% url 'users:register' %}">Sign Up</a>
+                    {% endif %}
+                </div>
+            </ul>
+        </nav>
+        <div class="mobile-menu-toggle">☰</div>
+    </div>
+</header>
+

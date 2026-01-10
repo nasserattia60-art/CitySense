@@ -1,0 +1,92 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}CitySense | city report{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href=" {% static 'css/analysis/report.css' %}">
+{% endblock %}
+{% block content %}
+
+   
+    <div class="report-container">
+
+        <article class="report-card">
+
+            <!-- Header -->
+            <section>
+                <h2>CitySense Report</h2>
+                {% if report.avg_feedback_score %}
+                    <p><strong>AI Quality Score:</strong> {{ report.avg_feedback_score }}/5</p>
+                {% endif %}
+                <p><strong>Address:</strong> {{ report.location.address }}</p>
+            </section>
+
+            <!-- Metrics with Graphs -->
+            <section class="report-metrics">
+                <div class="metric-card" data-metric="Safety">
+                    <h4>Safety</h4>
+                    <p>{{ report.safety_score }}</p>
+                    <canvas id="chart-safety"></canvas>
+                </div>
+                <div class="metric-card" data-metric="Noise">
+                    <h4>Noise</h4>
+                    <p>{{ report.noise_level }}</p>
+                    <canvas id="chart-noise"></canvas>
+                </div>
+                <div class="metric-card" data-metric="Rent">
+                    <h4>Rent</h4>
+                    <p>{{ report.rent_level }}</p>
+                    <canvas id="chart-rent"></canvas>
+                </div>
+                <div class="metric-card" data-metric="Water">
+                    <h4>Water Quality</h4>
+                    <p>{{ report.water_quality }}</p>
+                    <canvas id="chart-water"></canvas>
+                </div>
+                <div class="metric-card" data-metric="AI">
+                    <h4>AI Score</h4>
+                    <p>{{ report.ai_score }}/100</p>
+                    <canvas id="chart-ai"></canvas>
+                </div>
+            </section>
+
+            <!-- Summary -->
+            <section class="report-summary">
+                <p>{{ report.ai_summary }}</p>
+                <a href="/community/feedback/{{ report.id }}/" class="report-link">
+                    Improve this analysis
+                </a>
+            </section>
+
+            <!-- Weather Info -->
+            {% if report.temperature %}
+            <section class="report-weather">
+                <h3>Weather Info</h3>
+                <div class="report-metrics">
+                    <div class="metric-card">
+                        <h4>Temperature</h4>
+                        <p>{{ report.temperature }} °C</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Wind Speed</h4>
+                        <p>{{ report.windspeed }} km/h</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Weather Code</h4>
+                        <p>{{ report.weather_code }}</p>
+                    </div>
+                </div>
+            </section>
+            {% endif %}
+
+        </article>
+
+    </div>
+
+
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{% static 'js/analysis/report.js' %}"></script>
+{% endblock %}

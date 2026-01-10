@@ -1,0 +1,25 @@
+# ملفات النظام أو مؤقتة
+*.log
+*.tmp
+
+# ملفات البيئة أو السرية
+.env
+venv/     
+__pycache__/ 
+
+# فولدرات تعتمد على التثبيت
+node_modules/
+__pycache__/
+
+# ملفات IDE
+.vscode/
+
+db.sqlite3
+.idea/
+*.pyc    
+*.pyo
+*.log
+*.sqlite3-journal
+.env
+media/
+

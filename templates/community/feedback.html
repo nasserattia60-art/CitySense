@@ -1,0 +1,25 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}CitySense | Explore Cities{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href=" {% static 'css/community/feedback.css' %}">
+{% endblock %}
+{% block content %}
+
+
+<div class="container feedback-container">
+    <h2>Provide Feedback for {{ report.location.address }}</h2>
+    <form method="post" class="glass-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="submit-btn">Submit Feedback</button>
+    </form>
+</div>
+
+
+
+{% endblock %}
+
+{% block extra_js %}
+
+{% endblock %}
